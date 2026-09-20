@@ -1,0 +1,158 @@
+{
+ "email": "ryukoputrategar1507@gmail.com",
+ "supabaseUrl": "https://khrztbhyldzzfrjueimd.supabase.co",
+ "supabaseKey": "sb_publishable_DPMM4V0_fysvRoNua2uHbA_o3HNeZ-A",
+ "projectsUrl": "https://github.com/rynx-own?tab=repositories",
+ "spotifyPlaylistId": "3V4BLTWQAxB6Q39g0WCgus",
+ "typing": "Junior Developer",
+ "education": [
+  {
+   "logo": "",
+   "icon": "bi-pc-display-horizontal",
+   "title": "SMK MALAKA",
+   "sub": "Teknik Kendaraan Ringan",
+   "year": "2025 – Sekarang"
+  },
+  {
+   "logo": "",
+   "icon": "bi-book",
+   "title": "SMP PGRI 38",
+   "sub": "Sekolah Menengah Pertama",
+   "year": "2022 – 2025"
+  },
+  {
+   "logo": "",
+   "icon": "bi-backpack",
+   "title": "SDN PULOGEBANG 20",
+   "sub": "Sekolah Dasar",
+   "year": "2016 – 2022"
+  }
+ ],
+ "projects": [
+  {
+   "icon": "bi-whatsapp",
+   "title": "Project Bot WhatsApp",
+   "desc": "Bot WhatsApp berbasis Node.js.",
+   "url": "https://github.com/rynx-own/MoonXtrz"
+  },
+  {
+   "icon": "bi-robot",
+   "title": "Project Bot Telegram",
+   "desc": "Bot otomasi berbasis Node.js.",
+   "url": "https://github.com/rynx-own"
+  },
+  {
+   "icon": "bi-globe2",
+   "title": "Project Website",
+   "desc": "Website responsif dengan React + Vite.",
+   "url": "https://github.com/rynx-own/portofolio"
+  },
+  {
+   "icon": "bi-terminal",
+   "title": "Project Otomasi",
+   "desc": "Script otomasi tugas harian.",
+   "url": "https://github.com/rynx-own/"
+  },
+  {
+   "icon": "bi-cpu",
+   "title": "Project API",
+   "desc": "REST API sederhana dengan Node.js.",
+   "url": "https://github.com/botcahx/"
+  }
+ ],
+ "tech": [
+  {
+   "name": "HTML",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+  },
+  {
+   "name": "CSS",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+  },
+  {
+   "name": "JavaScript",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+  },
+  {
+   "name": "Tailwind CSS",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+  },
+  {
+   "name": "React",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+  },
+  {
+   "name": "Vite",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg"
+  },
+  {
+   "name": "Node JS",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+  },
+  {
+   "name": "Bootstrap",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+  },
+  {
+   "name": "Figma",
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+  },
+  {
+   "name": "Vercel",
+   "invert": true,
+   "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+  }
+ ],
+ "gallery": [
+  "https://i.ibb.co.com/8gRMdbq5/Screenshot-20260909-071333.png",
+  "https://i.ibb.co.com/d0dV4GVz/Snapchat-1697050754.jpg",
+  "https://i.ibb.co.com/5xfjK927/IMG-20260813-225405-076.jpg",
+  "https://i.ibb.co.com/F41MHm98/IMG-20260813-231541-019.jpg",
+  "https://i.ibb.co.com/bgjm5jyF/IMG-20260813-231915-777.jpg",
+  "https://i.ibb.co.com/RkbNpB1P/IMG-20260813-234117-961.jpg"
+ ],
+ "socials": [
+  {
+   "name": "Instagram",
+   "icon": "bi-instagram",
+   "handle": "@ryukoputra88",
+   "web": "https://instagram.com/ryukoputra88",
+   "app": "instagram://user?username=ryukoputra88"
+  },
+  {
+   "name": "WhatsApp",
+   "icon": "bi-whatsapp",
+   "handle": "+62 851-2601-7141",
+   "web": "https://wa.me/6285126017141",
+   "app": "whatsapp://send?phone=6285126017141"
+  },
+  {
+   "name": "Github",
+   "icon": "bi-github",
+   "handle": "@rynx-own",
+   "web": "https://github.com/rynx-own",
+   "app": ""
+  },
+  {
+   "name": "TikTok",
+   "icon": "bi-tiktok",
+   "handle": "@an0ther.ryuu",
+   "web": "https://www.tiktok.com/@an0ther.ryuu",
+   "app": ""
+  },
+  {
+   "name": "Facebook",
+   "icon": "bi-facebook",
+   "handle": "Ryu Yi so pangge",
+   "web": "https://www.facebook.com/share/1Btppz4rTo/",
+   "app": ""
+  },
+  {
+   "name": "Telegram",
+   "icon": "bi-telegram",
+   "handle": "@laphantonryu",
+   "web": "https://t.me/laphantonryu",
+   "app": "tg://resolve?domain=laphantonryu"
+  }
+ ]
+}
