@@ -101,5 +101,3 @@ hr{border-color:rgba(255,255,255,.14);opacity:1;margin:1.6rem 0}
 .btnb.in:hover,.btng.in:hover,.proj.in:hover{transform:translate3d(0,-4px,0);transition-delay:0s;transition-duration:.4s}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important}[data-a]{opacity:1;transform:none;filter:none}html{scroll-behavior:auto}.comet{display:none}}
 @media(min-width:992px){.hero{padding-top:90px}.gallery{padding-inline:32vw}}
-
-
