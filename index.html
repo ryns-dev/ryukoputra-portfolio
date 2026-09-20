@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ryuko Putra Tegar P. | Portfolio</title>
+<meta name="description" content="Portfolio Ryuko Putra Tegar Pamungkas - Junior Developer"><meta name="theme-color" content="#02040a">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head><body class="lock">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="lg" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .02" numOctaves="2" seed="3" result="n"/><feGaussianBlur in="n" stdDeviation="2" result="b"/><feDisplacementMap in="SourceGraphic" in2="b" scale="26" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+<div class="nebula"></div><canvas id="stars"></canvas>
+
+<div id="loader"><canvas id="fx"></canvas>
+ <div class="lmeta"><span>Loading</span><span id="pc">0%</span></div><div class="lbar"><i id="bar"></i></div></div>
+
+<nav class="dock glass" aria-label="Navigasi">
+ <span class="pill"></span><span class="mascot"></span>
+ <a href="#home">Home</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Contact</a>
+</nav>
+
+<main>
+<section id="home" class="hero"><div class="container"><div class="row align-items-center g-5">
+ <div class="col-lg-7">
+  <h1 data-a="blur"><span class="b">Turning Ideas</span><br>Into Reality</h1>
+  <div class="typing" id="typing" data-a="left"></div>
+  <p class="lead" data-a="right">Creative Developer yang suka explore hal-hal baru. Coding by day, vibing to music by night. Let's create something aesthetic together!</p>
+  <div class="d-flex flex-wrap gap-3 mt-4">
+   <a id="btnProject" class="btnb" href="#" target="_blank" rel="noopener" data-a="zoom">Project <i class="bi bi-box-arrow-up-right"></i></a>
+   <a class="btng glass" href="#contact" data-a="flip">Contact Me <i class="bi bi-arrow-right"></i></a>
+  </div>
+ </div>
+ <div class="col-lg-5"><div class="glass card-pad" data-a="rise">
+  <h2>Daily Rotation</h2><p class="muted">My Spotify Playlist...</p>
+  <iframe id="spotify" title="Spotify" loading="lazy" height="352" width="100%" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+ </div></div>
+</div></div></section>
+
+<section id="about"><div class="container">
+ <h2 class="stitle" data-a="drop">About Me</h2>
+ <div class="row align-items-center g-4">
+  <div class="col-lg-5"><div id="avatar" class="avatar spidey" data-a="pop" title="Coba klik atau scroll di sini">
+   <img class="me" src="assets/img/me.svg" alt="Foto Ryuko" width="420" height="520"><img class="sp" src="assets/img/spiderman.svg" alt="" width="420" height="520"></div></div>
+  <div class="col-lg-7">
+   <h2 class="hi" data-a="left"><span class="b">Hi, I'm</span><br>Ryuko Putra Tegar .P.</h2>
+   <p class="lead" data-a="up">Halo! Kenalin nama gw Ryuko Putra Tegar Pamungkas, lu bisa panggil gw Ryu atau Tegar. Gua adalah seorang pengembang pemula yang sangat antusias dengan dunia teknologi. Gue fokus pada pengembangan web dan otomasi, terutama menggunakan Node.js.</p>
+   <p class="lead" data-a="up">Gue percaya bahwa coding bukan cuma soal ngetik sintaks, tapi soal nyelesaiin masalah dan bikin sesuatu yang bermanfaat (dan keren, tentunya). Hobi gw bermain basket. Selain itu, gue juga suka banget dengerin musik.</p>
+  </div>
+ </div>
+ <h3 class="sub" data-a="left">Education</h3><div id="edu" class="row g-3"></div>
+ <div class="row g-3 mt-4" id="stats">
+  <div class="col-md-4"><div class="glass stat" data-a="rise"><i class="bi bi-code-slash"></i><b data-n="5">0</b><span>Project</span></div></div>
+  <div class="col-md-4"><div class="glass stat" data-a="pop"><i class="bi bi-calendar-check"></i><b data-n="7">0</b><span>Tahun belajar</span></div></div>
+  <div class="col-md-4"><div class="glass stat" data-a="flip"><i class="bi bi-lightning-charge"></i><b>∞</b><span>Kegagalan</span></div></div>
+ </div>
+</div></section>
+
+<section id="portfolio"><div class="container">
+ <h2 class="stitle" data-a="drop">Portfolio</h2>
+ <div class="tabs glass" data-a="zoom"><button class="on" data-p="pj"><i class="bi bi-code-slash"></i>Project</button><button data-p="ts"><i class="bi bi-boxes"></i>Tech Stack</button></div>
+ <div id="pj" class="panel row g-3"></div>
+ <div id="ts" class="panel" hidden><div id="techgrid" class="row g-3"></div></div>
+ <div id="gal" class="gallery" aria-label="Galeri foto"></div>
+</div></section>
+
+<section id="contact"><div class="container">
+ <h2 class="stitle" data-a="drop">Hubungi Saya</h2>
+ <div class="row g-4 justify-content-center"><div class="col-lg-7">
+  <div class="glass card-pad big" data-a="rise">
+   <h3 class="b">Hubungi</h3><p class="lead">Ada yang mau ditanyakan? Langsung kirim pesan aja ya..!</p>
+   <form id="cform" class="d-grid gap-3">
+    <label class="field"><i class="bi bi-person"></i><input name="name" placeholder="Nama Anda" required></label>
+    <label class="field"><i class="bi bi-envelope"></i><input name="email" type="email" placeholder="Email Anda" required></label>
+    <label class="field"><i class="bi bi-chat-square"></i><textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea></label>
+    <button class="btnb justify-content-center" type="submit"><i class="bi bi-send"></i> Kirim Pesan</button>
+    <small id="cstat" class="muted" role="status"></small>
+   </form>
+   <hr><h4 class="sub2">FIND ME</h4><div id="soc" class="d-grid gap-3"></div>
+  </div>
+  <div class="glass card-pad big mt-4" data-a="pop">
+   <h3 class="cmhead"><span class="ico"><i class="bi bi-chat"></i></span> Komentar <span class="muted">(<span id="ccount">0</span>)</span></h3><hr>
+   <form id="cmform" class="d-grid gap-3">
+    <label>Nama<input class="plain" name="n" placeholder="Masukkan nama kamu" required maxlength="40"></label>
+    <label>Komentar<textarea class="plain" name="t" rows="4" placeholder="Tulis komentar kamu di sini.." required maxlength="400"></textarea></label>
+    <div>Foto Profil <span class="muted">(opsional)</span>
+     <label class="upload"><i class="bi bi-image"></i> <span id="fname">Choose Profile Photo</span><input id="cfile" type="file" accept="image/*" hidden></label>
+     <small class="muted d-block text-center mt-2" id="fhint">Max file size: 5MB</small></div>
+    <button class="btnb justify-content-center" type="submit"><i class="bi bi-send"></i> Kirim Komentar</button>
+   </form>
+   <div id="clist" class="clist"></div>
+  </div>
+ </div></div>
+</div></section>
+<footer class="text-center muted py-5">© 2026 Ryuko Putra Tegar Pamungkas</footer>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script type="module" src="js/main.js"></script>
+</body></html>
