@@ -115,42 +115,42 @@
   {
    "name": "Instagram",
    "icon": "bi-instagram",
-   "handle": "@ryukoputra88",
+   "handle": "",
    "web": "https://instagram.com/ryukoputra88",
    "app": "instagram://user?username=ryukoputra88"
   },
   {
    "name": "WhatsApp",
    "icon": "bi-whatsapp",
-   "handle": "+62 851-2601-7141",
+   "handle": "",
    "web": "https://wa.me/6285126017141",
    "app": "whatsapp://send?phone=6285126017141"
   },
   {
    "name": "Github",
    "icon": "bi-github",
-   "handle": "@rynx-own",
+   "handle": "",
    "web": "https://github.com/rynx-own",
    "app": ""
   },
   {
    "name": "TikTok",
    "icon": "bi-tiktok",
-   "handle": "@an0ther.ryuu",
+   "handle": "",
    "web": "https://www.tiktok.com/@an0ther.ryuu",
    "app": ""
   },
   {
    "name": "Facebook",
    "icon": "bi-facebook",
-   "handle": "Ryu Yi so pangge",
+   "handle": "",
    "web": "https://www.facebook.com/share/1Btppz4rTo/",
    "app": ""
   },
   {
    "name": "Telegram",
    "icon": "bi-telegram",
-   "handle": "@laphantonryu",
+   "handle": "",
    "web": "https://t.me/laphantonryu",
    "app": "tg://resolve?domain=laphantonryu"
   }
