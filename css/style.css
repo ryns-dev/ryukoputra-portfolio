@@ -14,7 +14,6 @@ a{color:inherit}
 @keyframes comet{0%{opacity:0;transform:translate3d(var(--x),var(--y),0) rotate(30deg)}12%{opacity:1}100%{opacity:0;transform:translate3d(calc(var(--x) + 760px),calc(var(--y) + 439px),0) rotate(30deg)}}
 .glass{position:relative;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(16px) saturate(1.7);backdrop-filter:blur(16px) saturate(1.7);border:1px solid rgba(255,255,255,.13);border-radius:28px;box-shadow:inset 0 1px 1px rgba(255,255,255,.32),inset 0 -10px 18px rgba(255,255,255,.03),0 12px 40px rgba(0,0,0,.45)}
 .glass::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 55% at 20% 0,rgba(255,255,255,.16),transparent 55%)}
-@media(hover:hover) and (pointer:fine){.dock{backdrop-filter:url(#lg) blur(8px) saturate(1.8)}}
 #loader{position:fixed;inset:0;z-index:100;background:radial-gradient(70% 50% at 50% 30%,#0a1b40,#02040a);transition:opacity 1.2s ease,transform 1.2s ease,filter 1.2s ease}
 #loader.out{opacity:0;transform:scale(1.12);filter:blur(20px);pointer-events:none}
 #fx{position:absolute;inset:0;width:100%;height:100%}
@@ -26,10 +25,10 @@ a{color:inherit}
 body.ready .dock{opacity:1;transform:none}
 .dock a{position:relative;z-index:2;padding:12px 18px;text-decoration:none;color:#cbd5e1;font-weight:500;border-radius:999px;transition:color .3s}
 .dock a.on{color:#fff}
-.pill{position:absolute;left:0;top:7px;bottom:7px;width:100px;z-index:1;border-radius:999px;transform-origin:left center;background:rgba(59,130,246,.24);box-shadow:inset 0 1px 1px rgba(255,255,255,.45),0 0 26px rgba(37,99,235,.4);will-change:transform}
-.mascot{position:absolute;left:0;top:-24px;width:34px;height:30px;z-index:3;border-radius:50% 50% 46% 46%;background:#fff;pointer-events:none;will-change:transform}
-.mascot::before{content:"";position:absolute;left:9px;top:11px;width:5px;height:5px;border-radius:50%;background:#111;box-shadow:11px 0 #111}
-.mascot::after{content:"";position:absolute;left:11px;bottom:-8px;width:12px;height:12px;background:#fff;transform:rotate(45deg)}
+.dock::before{content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(16px) saturate(1.7);backdrop-filter:blur(16px) saturate(1.7);border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 1px rgba(255,255,255,.32),inset 0 -10px 18px rgba(255,255,255,.03),0 12px 40px rgba(0,0,0,.45)}
+/* Liquid-glass lens: lebih besar dari bar, meluncur ke tab aktif */
+.pill{position:absolute;left:0;top:-5px;bottom:-5px;width:100px;z-index:1;border-radius:999px;transform-origin:center;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.06) 55%,rgba(120,170,255,.14));-webkit-backdrop-filter:blur(3px) saturate(1.9) brightness(1.18);backdrop-filter:blur(3px) saturate(1.9) brightness(1.18);border:1px solid rgba(255,255,255,.28);box-shadow:inset 2px 2px 3px -1px rgba(255,255,255,.7),inset -2px -2px 3px -1px rgba(255,255,255,.35),inset 0 0 14px rgba(255,255,255,.12),0 8px 24px rgba(0,0,0,.4),0 0 22px rgba(37,99,235,.25);will-change:transform,width}
+.refract .pill{-webkit-backdrop-filter:url(#lens) blur(1.5px) saturate(1.9) brightness(1.18);backdrop-filter:url(#lens) blur(1.5px) saturate(1.9) brightness(1.18)}
 @media(max-width:480px){.dock a{padding:11px 11px;font-size:.88rem}}
 section{padding:120px 0 40px}
 .stitle{text-align:center;font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:2.5rem;letter-spacing:-.02em}
