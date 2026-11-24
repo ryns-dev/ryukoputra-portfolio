@@ -26,9 +26,15 @@ body.ready .dock{opacity:1;transform:none}
 .dock a{position:relative;z-index:2;padding:12px 18px;text-decoration:none;color:#cbd5e1;font-weight:500;border-radius:999px;transition:color .3s}
 .dock a.on{color:#fff}
 .dock::before{content:"";position:absolute;inset:0;z-index:0;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(16px) saturate(1.7);backdrop-filter:blur(16px) saturate(1.7);border:1px solid rgba(255,255,255,.13);box-shadow:inset 0 1px 1px rgba(255,255,255,.32),inset 0 -10px 18px rgba(255,255,255,.03),0 12px 40px rgba(0,0,0,.45)}
-/* Liquid-glass lens: lebih besar dari bar, meluncur ke tab aktif */
-.pill{position:absolute;left:0;top:-5px;bottom:-5px;width:100px;z-index:1;border-radius:999px;transform-origin:center;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.2),rgba(255,255,255,.06) 55%,rgba(120,170,255,.14));-webkit-backdrop-filter:blur(3px) saturate(1.9) brightness(1.18);backdrop-filter:blur(3px) saturate(1.9) brightness(1.18);border:1px solid rgba(255,255,255,.28);box-shadow:inset 2px 2px 3px -1px rgba(255,255,255,.7),inset -2px -2px 3px -1px rgba(255,255,255,.35),inset 0 0 14px rgba(255,255,255,.12),0 8px 24px rgba(0,0,0,.4),0 0 22px rgba(37,99,235,.25);will-change:transform,width}
-.refract .pill{-webkit-backdrop-filter:url(#lens) blur(1.5px) saturate(1.9) brightness(1.18);backdrop-filter:url(#lens) blur(1.5px) saturate(1.9) brightness(1.18)}
+.dock a{-webkit-user-drag:none}
+.dock{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+/* highlight datar untuk tab aktif (saat tidak ditekan) */
+.hl{position:absolute;left:0;top:7px;bottom:7px;width:80px;z-index:1;border-radius:999px;pointer-events:none;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.1);will-change:transform,width,opacity}
+/* Liquid-glass lens: hanya muncul saat bar ditekan, isinya teks yang di-zoom */
+.pill{position:absolute;left:0;top:-8px;bottom:-8px;width:100px;z-index:3;border-radius:30px;overflow:hidden;visibility:hidden;transform-origin:center;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.04) 55%,rgba(255,255,255,.1));-webkit-backdrop-filter:blur(5px) saturate(1.6) brightness(1.12);backdrop-filter:blur(5px) saturate(1.6) brightness(1.12);border:1px solid rgba(255,255,255,.3);box-shadow:inset 2px 2px 4px -1px rgba(255,255,255,.65),inset -2px -2px 4px -1px rgba(255,255,255,.3),inset 0 0 18px rgba(255,255,255,.1),0 10px 28px rgba(0,0,0,.45);will-change:transform,width,opacity}
+.zoom{position:absolute;left:0;top:0;display:flex;gap:2px;padding:7px;transform-origin:0 0;pointer-events:none;will-change:transform}
+.zoom a{color:#fff}
+.refract .pill{-webkit-backdrop-filter:url(#lens) blur(4px) saturate(1.6) brightness(1.12);backdrop-filter:url(#lens) blur(4px) saturate(1.6) brightness(1.12)}
 @media(max-width:480px){.dock a{padding:11px 11px;font-size:.88rem}}
 section{padding:120px 0 40px}
 .stitle{text-align:center;font-size:clamp(2.2rem,6vw,3.6rem);margin-bottom:2.5rem;letter-spacing:-.02em}
