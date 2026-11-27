@@ -1,26 +1,64 @@
-export function runLoader(RM){return new Promise(async done=>{
+export function runLoader(RM){return new Promise(done=>{
  const L=document.getElementById('loader'),cv=document.getElementById('fx'),x=cv.getContext('2d'),bar=document.getElementById('bar'),pc=document.getElementById('pc');
- const W=cv.width=innerWidth,H=cv.height=innerHeight,dur=RM?900:4200,P=[];
- try{await document.fonts.load('700 40px Roboto')}catch{}
- const fs=Math.min(W*.095,72),o=document.createElement('canvas');o.width=W;o.height=H;const g=o.getContext('2d',{willReadFrequently:true});
- g.textAlign='center';g.textBaseline='middle';g.font=`700 ${fs}px Roboto,sans-serif`;
- [['Welcome To My','#e8eeff',H*.5-fs*.6],['Portfolio Website','#2563eb',H*.5+fs*.7]].forEach(([t,c,y])=>{
-  g.clearRect(0,0,W,H);g.fillStyle=c;g.fillText(t,W/2,y);const d=g.getImageData(0,0,W,H).data,st=W<600?3:4;
-  for(let j=0;j<H;j+=st)for(let i=0;i<W;i+=st)if(d[(j*W+i)*4+3]>128){const a=Math.random()*6.283;P.push({x:i,y:j,c,dx:Math.cos(a),dy:Math.sin(a),r:60+Math.random()*260})}});
- let bolt=[],bt=-999;
- const mk=()=>{const p=[[0,0]];let px=0,y=0;while(y<H){y+=16+Math.random()*24;px+=(Math.random()-.5)*44;p.push([px,y])}return p};
- const drawBolt=t=>{if(t-bt>90){bt=t;bolt=mk()}const sway=W*.5+Math.sin(t/700)*W*.2,fl=.75+Math.random()*.25;x.globalCompositeOperation='lighter';x.lineJoin='round';
-  [[26,.05],[11,.13],[4,.5],[1.8,1]].forEach(([w,a])=>{x.beginPath();bolt.forEach(([px,py],i)=>{const sx=px+sway+Math.sin(py/150+t/450)*38;i?x.lineTo(sx,py):x.moveTo(sx,py)});x.lineWidth=w;x.strokeStyle=w<3?`rgba(255,255,255,${a*fl})`:`rgba(110,180,255,${a*fl})`;x.stroke()});x.globalCompositeOperation='source-over'};
- const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
- let loaded=document.readyState==='complete';if(!loaded)addEventListener('load',()=>loaded=true);
- const s0=performance.now();
- const frame=now=>{const el=now-s0;let p=Math.min(el/dur,1);if(!loaded)p=Math.min(p,.92);
-  x.clearRect(0,0,W,H);if(!RM)drawBolt(now);
-  const t=Math.min(el/(dur*.8),1),z=RM?1:1.5-.5*ease(Math.min(t*1.6,1));
-  const sc=RM?0:t<.15?0:t<.45?ease((t-.15)/.3):t<.9?1-ease((t-.45)/.45):0;
-  x.globalAlpha=1-.4*sc;
-  for(const q of P){x.fillStyle=q.c;x.fillRect(W/2+(q.x-W/2+q.dx*q.r*sc)*z,H/2+(q.y-H/2+q.dy*q.r*sc)*z,2.4,2.4)}
-  x.globalAlpha=1;bar.style.transform=`scaleX(${p})`;pc.textContent=Math.round(p*100)+'%';
-  if(p<1)requestAnimationFrame(frame);else setTimeout(()=>{L.classList.add('out');done();setTimeout(()=>L.remove(),1300)},400)};
+ const W=innerWidth,H=innerHeight,d=Math.min(devicePixelRatio||1,1.5);
+ cv.width=W*d;cv.height=H*d;x.scale(d,d);
+
+ // Style khusus loader (otomatis dihapus setelah selesai)
+ const css=document.createElement('style');
+ css.textContent=`.lt{position:absolute;left:0;right:0;top:44%;transform:translate3d(0,-50%,0);text-align:center;z-index:2;padding:0 12px;will-change:transform,opacity}
+.lt.go{transition:transform .8s cubic-bezier(.6,0,.9,.4),opacity .6s ease-in;transform:translate3d(0,-50%,0) scale(2.2);opacity:0}
+.lw{font-weight:700;line-height:1.15;white-space:nowrap}
+.lw.a{font-size:clamp(1.4rem,6.5vw,2.4rem);color:#e8eeff}
+.lw.b{font-size:clamp(1.9rem,9vw,3.8rem);color:#2563eb;text-shadow:0 0 28px rgba(37,99,235,.7)}
+.lw span{display:inline-block;opacity:0;transform:translate3d(0,26px,0) scale(.5);animation:li .9s cubic-bezier(.22,1,.36,1) forwards;animation-delay:calc(var(--i)*55ms + 250ms)}
+.lw.b span{animation-delay:calc(var(--i)*55ms + 900ms)}
+@keyframes li{to{opacity:1;transform:none}}
+.lflash{position:absolute;inset:0;z-index:3;background:#fff;opacity:0;pointer-events:none;transition:opacity .35s ease-out}
+.lflash.on{opacity:.9}
+@media(prefers-reduced-motion:reduce){.lw span{opacity:1!important;transform:none!important}}`;
+ document.head.appendChild(css);
+
+ // Teks
+ const t=document.createElement('div');t.className='lt';
+ const word=(s,c)=>`<div class="lw ${c}">${[...s].map((ch,i)=>`<span style="--i:${i}">${ch===' '?'&nbsp;':ch}</span>`).join('')}</div>`;
+ t.innerHTML=word('Welcome To My','a')+word('Portfolio Website','b');
+ L.appendChild(t);
+ const fl=document.createElement('div');fl.className='lflash';L.appendChild(fl);
+
+ // Bintang
+ const N=W<600?220:380,S=[];
+ const reset=(s,far)=>{s.x=(Math.random()-.5)*2*W;s.y=(Math.random()-.5)*2*H;s.z=far?W:Math.random()*W+1;s.pz=s.z};
+ for(let i=0;i<N;i++){const s={};reset(s);S.push(s)}
+ const cx=W/2,cy=H*.44,f=W*.5;
+
+ const dur=RM?900:3600,s0=performance.now();
+ let last=s0,fin=0,stop=false,loaded=document.readyState==='complete';
+ if(!loaded)addEventListener('load',()=>loaded=true);
+
+ const frame=now=>{
+  if(stop)return;
+  const dt=Math.min(now-last,50);last=now;
+  let p=Math.min((now-s0)/dur,1);if(!loaded)p=Math.min(p,.92);
+  let sp=RM?0:(.3+p*p*2.2)*dt;
+  if(fin)sp*=1+Math.min((now-fin)/600,1)*5;
+
+  x.clearRect(0,0,W,H);x.strokeStyle='#cfe0ff';x.lineCap='round';
+  for(const s of S){
+   s.pz=s.z;s.z-=sp;
+   if(s.z<1){reset(s,true);continue}
+   const a=cx+s.x/s.z*f,b=cy+s.y/s.z*f,c=cx+s.x/s.pz*f,e=cy+s.y/s.pz*f;
+   x.globalAlpha=Math.min(1,(1-s.z/W)*1.4+.1);x.lineWidth=(1-s.z/W)*2+.4;
+   x.beginPath();x.moveTo(c,e);x.lineTo(a,b);x.stroke();
+  }
+  x.globalAlpha=1;
+  bar.style.transform=`scaleX(${p})`;pc.textContent=Math.round(p*100)+'%';
+
+  if(p>=1&&!fin){
+   fin=now;
+   setTimeout(()=>{t.classList.add('go');fl.classList.add('on')},RM?0:350);
+   setTimeout(()=>{stop=true;L.classList.add('out');done();setTimeout(()=>{L.remove();css.remove()},1300)},RM?300:850);
+  }
+  requestAnimationFrame(frame);
+ };
  requestAnimationFrame(frame);
 })}
